@@ -4,11 +4,11 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../../config/env.js";
 
 export const signIn = async (req, res) => {
+  return res.status(400).json({ message: "You are in SignIn Method" });
   const { username, password } = req.body;
 
   // Validate user input
   if (!username || !password) {
-    return res.status(400).json({ message: "All fields are required" });
   }
 
   // Check if user exists
